@@ -25,6 +25,7 @@ import javax.swing.*;
 
 /* 这是第三次修改 */
 /* B2分支修改 */
+/* 使用IDE中的Git管理 */
 public class TextGraph {
     private Map<String, Set<Edge>> graph;  //一个映射，也就是一个字符串映射到一个edge类的集合，该edge类有两个属性，顶点名字以及该条边的权重，如下
     private static class Edge {
