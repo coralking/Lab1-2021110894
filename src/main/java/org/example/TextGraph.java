@@ -20,7 +20,7 @@ import org.jgrapht.graph.DefaultWeightedEdge;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
-/* 这是一个修改 */
+
 public class TextGraph {
     private Map<String, Set<Edge>> graph;  //一个映射，也就是一个字符串映射到一个edge类的集合，该edge类有两个属性，顶点名字以及该条边的权重，如下
     private static class Edge {
@@ -90,7 +90,6 @@ public class TextGraph {
             frame.setVisible(true);
             return;
         }
-
         //生成png文件
         mxIGraphLayout layout = new mxCircleLayout(graphAdapter);
         layout.execute(graphAdapter.getDefaultParent());
@@ -98,7 +97,6 @@ public class TextGraph {
         File imgFile = new File("src/main/resources/graph.png");
         ImageIO.write(image,"PNG", imgFile);
         // 显示png文件
-
         Image imageShow = ImageIO.read(new File("src/main/resources/graph.png"));
         JFrame frame = new JFrame("Show Graph");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -109,7 +107,6 @@ public class TextGraph {
         frame.getContentPane().add(label);
         // 显示窗口
         frame.setVisible(true);
-
     }
     String queryBridgeWords(String word1, String word2){
         // 如果word1和word2不存在
@@ -221,7 +218,7 @@ public class TextGraph {
             current = predecessors.get(current);
         }
 
-        // 移除最后的 "->" 并添加源节点
+        // 移除最后的 "->"
         path.delete(path.length() - "->".length(), path.length());
 
         // 如果源节点和目标节点相同，或者没有路径连接它们
@@ -302,7 +299,6 @@ public class TextGraph {
                 e.printStackTrace();
             }
         });
-
 
         printThread.start();
         inputThread.start();
