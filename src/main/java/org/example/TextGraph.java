@@ -111,8 +111,14 @@ public class TextGraph {
     String queryBridgeWords(String word1, String word2){
         // 如果word1和word2不存在
         if (!graph.containsKey(word1) || !graph.containsKey(word2)) {
-            if(!graph.containsKey(word1) && !graph.containsKey(word2)) return "No " + "\"" + word1 + "\"" + " and " + "\"" + word2 + "\"" + " in the graph!";
-            return !graph.containsKey(word1)? "No " + "\"" + word1 + "\"" + " in the graph!":"No " + "\"" + word2 + "\"" + " in the graph!";
+            if(!graph.containsKey(word1) && !graph.containsKey(word2))
+                return "No " + "\"" + word1 + "\"" + " and " + "\"" + word2 + "\"" + " in the graph!";
+            else{
+                if(!graph.containsKey(word1))
+                    return "No " + "\"" + word1 + "\"" + " in the graph!";
+                else
+                    return "No " + "\"" + word2 + "\"" + " in the graph!";
+            }
         }
         // 查找word1的所有后继节点
         Set<Edge> successorsOfWord1 = graph.get(word1);
@@ -120,8 +126,8 @@ public class TextGraph {
         for (Edge edge : successorsOfWord1) {
             String potentialBridgeWord = edge.vertex;
             Set<Edge> successorsOfBridgeWord = graph.get(potentialBridgeWord);
-
-            if (successorsOfBridgeWord != null && successorsOfBridgeWord.stream().anyMatch(e -> e.vertex.equals(word2))) {
+            if (successorsOfBridgeWord != null && successorsOfBridgeWord.stream().anyMatch(e -> e.vertex.equals(word2)))
+            {
                 //System.out.println(successorsOfBridgeWord.stream());
                 bridgeWords.add(potentialBridgeWord);
             }
@@ -130,7 +136,8 @@ public class TextGraph {
         if (bridgeWords.isEmpty()) {
             return "No bridge words from " + "\"" + word1 + "\"" + " to " + "\"" + word2 + "\"" + "!";
         } else {
-            StringBuilder sb = new StringBuilder("The bridge words from " + "\"" + word1 + "\"" + " to " + "\"" + word2 + "\"" + " are: ");
+            StringBuilder sb = new StringBuilder("The bridge words from " + "\"" + word1 + "\"" + " to " + "\"" +
+                    word2 + "\"" + " are: ");
             for (String bridgeWord : bridgeWords) {
                 sb.append(bridgeWord).append(", ");
             }
