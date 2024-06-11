@@ -104,4 +104,61 @@ public class TextGraph {
             return sb.toString();
         }
     }
+
+    String calcShortestPath(String word1, String word2) {
+        word1 = word1.toLowerCase();
+        word2 = word2.toLowerCase();
+
+        if (word1.isEmpty() && word2.isEmpty()) {
+            return "Both words are empty!";
+        }
+        if (word1.isEmpty() || word2.isEmpty()) {
+            return "One word is empty!";
+        }
+
+        if (!graph.containsKey(word1) || !graph.containsKey(word2)) {
+            return "No " + word1 + " or " + word2 + " in the graph!";
+        }
+
+        Map<String, Integer> distances = new HashMap<>();
+        Map<String, String> predecessors = new HashMap<>();
+        for (String word : graph.keySet()) {
+            distances.put(word, Integer.MAX_VALUE);
+        }
+        distances.put(word1, 0);
+
+        Queue<String> queue = new PriorityQueue<>(Comparator.comparingInt(distances::get));
+        queue.add(word1);
+
+        while (!queue.isEmpty()) {
+            String current = queue.poll();
+            if (current.equals(word2)) {
+                break;
+            }
+
+            for (Edge edge : graph.getOrDefault(current, Collections.emptySet())) {
+                String neighbor = edge.vertex;
+                int distanceThroughCurrent = distances.get(current) + edge.weight;
+
+                if (distanceThroughCurrent < distances.get(neighbor)) {
+                    distances.put(neighbor, distanceThroughCurrent);
+                    predecessors.put(neighbor, current);
+                    queue.add(neighbor);
+                }
+            }
+        }
+
+        StringBuilder path = new StringBuilder();
+        String current = word2;
+        while (current != null) {
+            path.insert(0, current + "->");
+            current = predecessors.get(current);
+        }
+        path.delete(path.length() - "->".length(), path.length());
+        if (!path.toString().startsWith(word1)) {
+            return "No path from \"" + word1 + "\" to \"" + word2 + "\"!";
+        }
+
+        return path.toString();
+    }
 }
