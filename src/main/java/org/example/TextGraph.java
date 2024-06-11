@@ -169,6 +169,14 @@ public class TextGraph {
         word1 = word1.toLowerCase();
         word2 = word2.toLowerCase();
 
+        if (word1.isEmpty() && word2.isEmpty()) {
+            return "Both words are empty!";
+        }
+
+        if (word1.isEmpty() || word2.isEmpty()) {
+            return "One word is empty!";
+        }
+
         if (!graph.containsKey(word1) || !graph.containsKey(word2)) {
             return "No " + "\"" + word1 + "\"" + " or " + "\"" + word2 + "\"" + " in the graph!";
         }
