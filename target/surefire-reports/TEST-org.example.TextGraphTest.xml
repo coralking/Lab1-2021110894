@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.example.TextGraphTest" time="0.066" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.example.TextGraphTest" time="0.068" tests="11" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CN"/>
     <property name="sun.boot.library.path" value="C:\Users\86188\.jdks\corretto-17.0.11\bin"/>
-    <property name="sun.java.command" value="C:\Users\86188\AppData\Local\Temp\surefire7551806481641755205\surefirebooter-20240612102143906_3.jar C:\Users\86188\AppData\Local\Temp\surefire7551806481641755205 2024-06-12T10-21-43_744-jvmRun1 surefire-20240612102143906_1tmp surefire_0-20240612102143906_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\86188\AppData\Local\Temp\surefire7382471291093026893\surefirebooter-20240612103736855_3.jar C:\Users\86188\AppData\Local\Temp\surefire7382471291093026893 2024-06-12T10-37-36_712-jvmRun1 surefire-20240612103736855_1tmp surefire_0-20240612103736855_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\86188\Desktop\软件工程\Lab1\target\test-classes;C:\Users\86188\Desktop\软件工程\Lab1\target\classes;C:\Users\86188\.m2\repository\junit\junit\4.13.1\junit-4.13.1.jar;C:\Users\86188\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\86188\.m2\repository\org\jgrapht\jgrapht-core\1.5.1\jgrapht-core-1.5.1.jar;C:\Users\86188\.m2\repository\org\jheaps\jheaps\0.13\jheaps-0.13.jar;C:\Users\86188\.m2\repository\org\jgrapht\jgrapht-ext\1.0.1\jgrapht-ext-1.0.1.jar;C:\Users\86188\.m2\repository\org\tinyjee\jgraphx\jgraphx\2.0.0.1\jgraphx-2.0.0.1.jar;C:\Users\86188\.m2\repository\jgraph\jgraph\5.13.0.0\jgraph-5.13.0.0.jar;C:\Users\86188\.m2\repository\org\antlr\antlr4-runtime\4.5.3\antlr4-runtime-4.5.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\86188\AppData\Local\Temp\surefire7551806481641755205\surefirebooter-20240612102143906_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\86188\AppData\Local\Temp\surefire7382471291093026893\surefirebooter-20240612103736855_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.11+9-LTS"/>
@@ -58,24 +58,48 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testQueryBridgeWords_case1" classname="org.example.TextGraphTest" time="0.014">
-    <system-out><![CDATA[Result: No "start" and "end" in the graph!
+  <testcase name="testQueryBridgeWords_case1" classname="org.example.TextGraphTest" time="0.015">
+    <system-out><![CDATA[case1-Result: No "start" and "end" in the graph!
 ]]></system-out>
   </testcase>
   <testcase name="testQueryBridgeWords_case2" classname="org.example.TextGraphTest" time="0.001">
-    <system-out><![CDATA[Result: No "start" in the graph!
+    <system-out><![CDATA[case2-Result: No "start" in the graph!
 ]]></system-out>
   </testcase>
   <testcase name="testQueryBridgeWords_case3" classname="org.example.TextGraphTest" time="0.001">
-    <system-out><![CDATA[Result: No "end" in the graph!
+    <system-out><![CDATA[case3-Result: No "end" in the graph!
 ]]></system-out>
   </testcase>
   <testcase name="testQueryBridgeWords_case4" classname="org.example.TextGraphTest" time="0.002">
-    <system-out><![CDATA[Result: No bridge words from "seek" to "to"!
+    <system-out><![CDATA[case4-Result: No bridge words from "seek" to "to"!
 ]]></system-out>
   </testcase>
-  <testcase name="testQueryBridgeWords_case5" classname="org.example.TextGraphTest" time="0.001">
-    <system-out><![CDATA[Result: The bridge words from "to" to "strange" are: explore, seek
+  <testcase name="testQueryBridgeWords_case5" classname="org.example.TextGraphTest" time="0.0">
+    <system-out><![CDATA[case5-Result: The bridge words from "to" to "strange" are: explore, seek
+]]></system-out>
+  </testcase>
+  <testcase name="testCalcShortestPath_case1" classname="org.example.TextGraphTest" time="0.002">
+    <system-out><![CDATA[case1-Result: seek->out->new->life->and
+]]></system-out>
+  </testcase>
+  <testcase name="testCalcShortestPath_case2" classname="org.example.TextGraphTest" time="0.002">
+    <system-out><![CDATA[case2-Result: No path from "eating" to "studying"!
+]]></system-out>
+  </testcase>
+  <testcase name="testCalcShortestPath_case3" classname="org.example.TextGraphTest" time="0.001">
+    <system-out><![CDATA[case3-Result: Both words are empty!
+]]></system-out>
+  </testcase>
+  <testcase name="testCalcShortestPath_case4" classname="org.example.TextGraphTest" time="0.001">
+    <system-out><![CDATA[case4-Result: One word is empty!
+]]></system-out>
+  </testcase>
+  <testcase name="testCalcShortestPath_case5" classname="org.example.TextGraphTest" time="0.001">
+    <system-out><![CDATA[case5-Result: No start or new in the graph!
+]]></system-out>
+  </testcase>
+  <testcase name="testCalcShortestPath_case6" classname="org.example.TextGraphTest" time="0.001">
+    <system-out><![CDATA[case6-Result: No start or end in the graph!
 ]]></system-out>
   </testcase>
 </testsuite>
