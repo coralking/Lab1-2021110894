@@ -117,7 +117,7 @@ public class TextGraph {
         }
 
         if (!graph.containsKey(word1) || !graph.containsKey(word2)) {
-            return "No " + word1 + " or " + word2 + " in the graph!";
+            return "No " + "\"" + word1 + "\"" + " or " + "\"" + word2 + "\"" + " in the graph!";
         }
 
         Map<String, Integer> distances = new HashMap<>();

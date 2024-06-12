@@ -50,7 +50,7 @@ public class TextGraphTest {
         textGraph.readFile("src/test/java/org/example/test-b1.txt");
         String result = textGraph.calcShortestPath("start", "new");
         System.out.println("case5-Result: " + result);
-        assertEquals("No start or new in the graph!", result);
+        assertEquals("No " + "\"" + "start" + "\"" + " or " + "\"" + "new" + "\"" + " in the graph!", result);
     }
 
     @Test
@@ -58,7 +58,7 @@ public class TextGraphTest {
         textGraph.readFile("src/test/java/org/example/test-b1.txt");
         String result = textGraph.calcShortestPath("start", "end");
         System.out.println("case6-Result: " + result);
-        assertEquals("No start or end in the graph!", result);
+        assertEquals("No " + "\"" + "start" + "\"" + " or " + "\"" + "end" + "\"" + " in the graph!", result);
     }
 
     @Test
