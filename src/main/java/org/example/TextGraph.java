@@ -114,7 +114,7 @@ public class TextGraph {
             if (!graph.containsKey(word1) && !graph.containsKey(word2)) {
                 return "No " + "\"" + word1 + "\"" + " and " + "\"" + word2 + "\"" + " in the graph!";
             } else {
-                if (graph.containsKey(word1)) {
+                if (!graph.containsKey(word1)) {
                     return "No " + "\"" + word1 + "\"" + " in the graph!";
                 } else {
                     return "No " + "\"" + word2 + "\"" + " in the graph!";
