@@ -15,7 +15,6 @@ public class TextGraphTest {
 
     @Test
     public void testQueryBridgeWords_case1() {
-        System.out.println("White Box Testing: ");
         textGraph.readFile("test-w.txt", true);
         String result = textGraph.queryBridgeWords("start", "end");
         System.out.println("case1-Result: " + result);
